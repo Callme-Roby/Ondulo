@@ -2,6 +2,7 @@
   "expo": {
     "name": "Ondulo",
     "slug": "Ondulo",
+    "scheme": "ondulo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,6 +17,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ondulo.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
