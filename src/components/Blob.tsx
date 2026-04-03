@@ -40,8 +40,8 @@ export default function Blob({ completionRatio }: BlobProps) {
   const blobOpacity = 0.5 + completionRatio * 0.5;
   // Saturation: simulated via desaturation overlay opacity
   const desaturationOpacity = Math.max(0, 0.7 - completionRatio * 0.85);
-  // Face opacity
-  const faceOpacity = 0.3 + completionRatio * 0.7;
+  // Face always visible
+  const faceOpacity = 1;
 
   const animatedBlobStyle = useAnimatedStyle(() => {
     const br1 = interpolate(morphProgress.value, [0, 1], [60, 30]);
