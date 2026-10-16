@@ -96,23 +96,24 @@ export default function Blob({ completionRatio }: BlobProps) {
             { opacity: desaturationOpacity },
           ]}
         />
-        {/* Face SVG */}
-        <Svg
-          width={blobSize * 0.38}
-          height={blobSize * 0.38}
-          viewBox="0 0 100 100"
-          style={{ opacity: faceOpacity }}
-        >
-          <Circle cx="35" cy="45" r="5" fill="white" />
-          <Circle cx="65" cy="45" r="5" fill="white" />
-          <Path
-            d="M 35 65 Q 50 80 65 65"
-            stroke="white"
-            strokeWidth="6"
-            strokeLinecap="round"
-            fill="none"
-          />
-        </Svg>
+        {/* Face SVG — wrapped in a View so it stacks above the absolute layers on web too */}
+        <View style={{ opacity: faceOpacity }}>
+          <Svg
+            width={blobSize * 0.38}
+            height={blobSize * 0.38}
+            viewBox="0 0 100 100"
+          >
+            <Circle cx="35" cy="45" r="5" fill="white" />
+            <Circle cx="65" cy="45" r="5" fill="white" />
+            <Path
+              d="M 35 65 Q 50 80 65 65"
+              stroke="white"
+              strokeWidth="6"
+              strokeLinecap="round"
+              fill="none"
+            />
+          </Svg>
+        </View>
       </Animated.View>
     </View>
   );
