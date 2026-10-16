@@ -24,7 +24,7 @@ Tout reste sur l'appareil : aucun compte, aucun serveur, aucun appel réseau. La
 ## Stack
 
 - [Expo](https://expo.dev) SDK 54 / React Native 0.81, un seul code pour iOS, Android et le web (`react-native-web`)
-- Animations du blob avec `react-native-reanimated`, visuels en `react-native-svg` et `expo-linear-gradient`
+- Billy ondule avec `react-native-reanimated` (contour SVG animé), visuels en `react-native-svg` et `expo-linear-gradient`
 - Navigation par onglets et piles avec React Navigation
 - Polices Plus Jakarta Sans et Inter (`@expo-google-fonts`), embarquées dans l'app
 - Caméra : `expo-camera` sur mobile, `getUserMedia` sur le web
@@ -56,7 +56,9 @@ L'APK Android est construit par le workflow GitHub Actions `.github/workflows/bu
 
 ## Assets Figma
 
-Les icônes, blobs et la carte viennent du fichier Figma et sont listés dans `assets/figma/manifest.json` (nom du fichier, asset Figma, nœud et taille). Le module `src/assets/figma.ts` les expose aux écrans. Tant qu'un fichier commence par le commentaire `PLACEHOLDER`, c'est une version provisoire à remplacer par l'export Figma du même nom.
+Les icônes, blobs et la carte sont exportés tels quels du fichier Figma et listés dans `assets/figma/manifest.json` (nom du fichier, asset Figma, nœud et taille). Le module `src/assets/figma.ts` les expose aux écrans.
+
+Billy est dessiné en `react-native-svg` à partir du contour Figma : `python3 scripts/figma-blobs.py` convertit les SVG des blobs en `src/assets/blobs.ts`, et `BillyBlob` fait onduler ce contour en continu (chaque point d'ancrage bouge à son rythme) pendant qu'il respire.
 
 ## Intégration en iframe
 
