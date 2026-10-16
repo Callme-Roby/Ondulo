@@ -5,6 +5,7 @@ import {
   StyleSheet,
   ScrollView,
   Image,
+  TouchableOpacity,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Path, Circle, Rect, Line } from 'react-native-svg';
@@ -13,10 +14,18 @@ import { DAILY_MISSIONS, Mission } from '../constants/missions';
 import Blob from '../components/Blob';
 import MissionCard from '../components/MissionCard';
 import { loadCompletion, saveCompletion } from '../storage/missionStore';
+import { useProfile } from '../context/ProfileContext';
+import { confirmAction } from '../utils/confirm';
 
-function SettingsIcon() {
+function SettingsButton({ onPress }: { onPress: () => void }) {
   return (
-    <View style={styles.settingsBtn}>
+    <TouchableOpacity
+      style={styles.settingsBtn}
+      onPress={onPress}
+      activeOpacity={0.7}
+      accessibilityRole="button"
+      aria-label="Réglages"
+    >
       <Svg width={22} height={22} viewBox="0 0 24 24" fill="none">
         <Circle cx="12" cy="12" r="3" stroke={Colors.textMedium} strokeWidth="1.8" />
         <Path
@@ -27,7 +36,7 @@ function SettingsIcon() {
           strokeLinejoin="round"
         />
       </Svg>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -48,6 +57,7 @@ function ProfileAvatar() {
 }
 
 export default function HomeScreen() {
+  const { profile, restartOnboarding } = useProfile();
   const [missions, setMissions] = useState<Mission[]>(DAILY_MISSIONS);
 
   // Restore mission progress saved on this device
@@ -86,6 +96,16 @@ export default function HomeScreen() {
     ? 'se réveille'
     : 'a besoin de toi';
 
+  const greeting = new Date().getHours() >= 18 ? 'Bonsoir' : 'Bonjour';
+
+  const openSettings = () =>
+    confirmAction(
+      'Revoir la présentation ?',
+      'Billy te reposera ses questions. Tes missions du jour sont conservées.',
+      'Recommencer',
+      restartOnboarding
+    );
+
   return (
     <SafeAreaView style={styles.safeArea} edges={['top']}>
       <ScrollView
@@ -97,8 +117,14 @@ export default function HomeScreen() {
         <View style={styles.header}>
           <ProfileAvatar />
           <Text style={styles.appTitle}>Ondulo</Text>
-          <SettingsIcon />
+          <SettingsButton onPress={openSettings} />
         </View>
+
+        {profile.name ? (
+          <Text style={styles.greeting}>
+            {greeting}, {profile.name}
+          </Text>
+        ) : null}
 
         {/* Day badge */}
         <View style={styles.dayBadge}>
@@ -183,6 +209,14 @@ const styles = StyleSheet.create({
     fontWeight: Fonts.bold,
     color: Colors.primary,
     letterSpacing: 0.5,
+  },
+  greeting: {
+    fontSize: 15,
+    fontWeight: Fonts.medium,
+    color: Colors.textMedium,
+    textAlign: 'center',
+    marginTop: -6,
+    marginBottom: 12,
   },
   settingsBtn: {
     width: 40,
