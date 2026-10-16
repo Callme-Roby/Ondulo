@@ -30,10 +30,20 @@
       "name": "Ondulo",
       "shortName": "Ondulo",
       "lang": "fr",
-      "themeColor": "#EEF4FA",
-      "backgroundColor": "#EEF4FA",
+      "themeColor": "#F5F7F9",
+      "backgroundColor": "#F5F7F9",
       "bundler": "metro",
       "output": "single"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Ondulo utilise la caméra pour la photo de tes missions. La photo n’est jamais enregistrée.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ]
+    ]
   }
 }

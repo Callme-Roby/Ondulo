@@ -1,0 +1,285 @@
+{
+  "_comment": "Figma assets used by the app. file: local name in assets/figma; asset: file name served by the Figma MCP for node `node` of file N9nzvHy7QCSd82LGHlfHMY; w/h: rendered size in the design.",
+  "assets": [
+    {
+      "file": "nav-home.svg",
+      "asset": "438a8.svg",
+      "node": "25:2116",
+      "w": 16,
+      "h": 18
+    },
+    {
+      "file": "nav-home-active.svg",
+      "asset": "06a5a.svg",
+      "node": "25:2116",
+      "w": 16,
+      "h": 18
+    },
+    {
+      "file": "nav-minimoi.svg",
+      "asset": "71d2c.svg",
+      "node": "25:2116",
+      "w": 22,
+      "h": 19
+    },
+    {
+      "file": "nav-minimoi-active.svg",
+      "asset": "d9045.svg",
+      "node": "110:641",
+      "w": 22,
+      "h": 19
+    },
+    {
+      "file": "nav-shop.svg",
+      "asset": "083c9.svg",
+      "node": "25:2116",
+      "w": 18,
+      "h": 22
+    },
+    {
+      "file": "nav-shop-active.svg",
+      "asset": "92a6d.svg",
+      "node": "118:1019",
+      "w": 18,
+      "h": 22
+    },
+    {
+      "file": "nav-defis.svg",
+      "asset": "1ef87.svg",
+      "node": "25:2116",
+      "w": 22,
+      "h": 22
+    },
+    {
+      "file": "nav-defis-active.svg",
+      "asset": "ce25c.svg",
+      "node": "143:692",
+      "w": 22,
+      "h": 22
+    },
+    {
+      "file": "header-settings.svg",
+      "asset": "67e1e.svg",
+      "node": "25:2116",
+      "w": 20.1,
+      "h": 20
+    },
+    {
+      "file": "header-settings-page.svg",
+      "asset": "50fdb.svg",
+      "node": "143:692",
+      "w": 20.1,
+      "h": 20
+    },
+    {
+      "file": "header-back.svg",
+      "asset": "35aa7.svg",
+      "node": "143:692",
+      "w": 20,
+      "h": 19
+    },
+    {
+      "file": "header-profile.svg",
+      "asset": "07fa4.svg",
+      "node": "25:2116",
+      "w": 16.2,
+      "h": 18
+    },
+    {
+      "file": "icon-star.svg",
+      "asset": "ec89c.svg",
+      "node": "118:1019",
+      "w": 10.2,
+      "h": 10.2
+    },
+    {
+      "file": "icon-cloth.svg",
+      "asset": "5e158.svg",
+      "node": "118:1019",
+      "w": 19.75,
+      "h": 13.75
+    },
+    {
+      "file": "icon-graph.svg",
+      "asset": "6c365.svg",
+      "node": "110:641",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "file": "icon-lock.svg",
+      "asset": "22ff3.svg",
+      "node": "143:692",
+      "w": 17.6,
+      "h": 22
+    },
+    {
+      "file": "icon-time.svg",
+      "asset": "4ac49.svg",
+      "node": "143:692",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "file": "icon-toque.svg",
+      "asset": "323c5.svg",
+      "node": "143:692",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "file": "icon-coin.svg",
+      "asset": "3a84d.svg",
+      "node": "143:692",
+      "w": 14,
+      "h": 14
+    },
+    {
+      "file": "icon-muscle.svg",
+      "asset": "afa84.svg",
+      "node": "143:692",
+      "w": 20,
+      "h": 21
+    },
+    {
+      "file": "icon-running.svg",
+      "asset": "5c679.svg",
+      "node": "134:720",
+      "w": 10,
+      "h": 14
+    },
+    {
+      "file": "icon-send.svg",
+      "asset": "8348c.svg",
+      "node": "195:1465",
+      "w": 16,
+      "h": 16
+    },
+    {
+      "file": "icon-check.svg",
+      "asset": "a230c.svg",
+      "node": "110:641",
+      "w": 12.225,
+      "h": 9.019
+    },
+    {
+      "file": "mission-hygiene.svg",
+      "asset": "56a62.svg",
+      "node": "25:2116",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "file": "mission-mobility.svg",
+      "asset": "67b1a.svg",
+      "node": "25:2116",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "file": "mission-meal.svg",
+      "asset": "87731.svg",
+      "node": "25:2116",
+      "w": 48,
+      "h": 48
+    },
+    {
+      "file": "blob-home.svg",
+      "asset": "0c52a.svg",
+      "node": "25:2116",
+      "w": 316,
+      "h": 304
+    },
+    {
+      "file": "blob-minimoi.svg",
+      "asset": "be2df.svg",
+      "node": "110:641",
+      "w": 105.6,
+      "h": 101.5
+    },
+    {
+      "file": "blob-step.svg",
+      "asset": "d3143.svg",
+      "node": "134:623",
+      "w": 64.1,
+      "h": 61.6
+    },
+    {
+      "file": "blob-launch.svg",
+      "asset": "6d728.svg",
+      "node": "75:726",
+      "w": 142.2,
+      "h": 136.7
+    },
+    {
+      "file": "blob-splash.svg",
+      "asset": "218e4.svg",
+      "node": "185:1168",
+      "w": 123,
+      "h": 118
+    },
+    {
+      "file": "blob-header.svg",
+      "asset": "abbf8.svg",
+      "node": "198:1531",
+      "w": 444.8,
+      "h": 179.9
+    },
+    {
+      "file": "steps-line.svg",
+      "asset": "42dd4.svg",
+      "node": "134:623",
+      "w": 165,
+      "h": 46
+    },
+    {
+      "file": "map.png",
+      "asset": "2deae.png",
+      "node": "134:720",
+      "w": 286,
+      "h": 365
+    },
+    {
+      "file": "map-route.svg",
+      "asset": "f9633.svg",
+      "node": "134:720",
+      "w": 114.5,
+      "h": 261
+    },
+    {
+      "file": "map-route-stroke.svg",
+      "asset": "cd7d9.svg",
+      "node": "134:720",
+      "w": 123,
+      "h": 267
+    },
+    {
+      "file": "map-cursor.svg",
+      "asset": "43b07.svg",
+      "node": "134:720",
+      "w": 47,
+      "h": 55
+    },
+    {
+      "file": "map-track.svg",
+      "asset": "a565e.svg",
+      "node": "134:720",
+      "w": 10.7,
+      "h": 423.7
+    },
+    {
+      "file": "map-arrow.svg",
+      "asset": "e3b2e.svg",
+      "node": "134:720",
+      "w": 28,
+      "h": 29
+    },
+    {
+      "file": "camera-shutter.svg",
+      "asset": "22304.svg",
+      "node": "205:5817",
+      "w": 81,
+      "h": 81
+    }
+  ]
+}

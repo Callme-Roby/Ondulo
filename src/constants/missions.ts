@@ -1,33 +1,38 @@
-export interface Mission {
+export type MissionIcon = 'mobility' | 'hygiene' | 'meal';
+
+export interface MissionTemplate {
   id: string;
   title: string;
   subtitle: string;
-  icon: 'movement' | 'hygiene' | 'meal';
-  completed: boolean;
-  progress?: { current: number; target: number; unit: string };
+  icon: MissionIcon;
+  /** The mission asks for a photo as proof (first mission of the onboarding). */
+  photo?: boolean;
 }
 
-export const DAILY_MISSIONS: Mission[] = [
+/** XP and stars earned per completed daily mission. */
+export const MISSION_REWARD = 20;
+
+// Day 1: the single mission Billy gives at the end of the onboarding
+const FIRST_DAY: MissionTemplate[] = [
   {
-    id: '1',
-    title: 'Mouvement',
-    subtitle: '4 230 / 6 000 pas aujourd\'hui',
-    icon: 'movement',
-    completed: false,
-    progress: { current: 4230, target: 6000, unit: 'pas' },
-  },
-  {
-    id: '2',
-    title: 'Hygiène',
-    subtitle: 'Routine de soin commencée',
-    icon: 'hygiene',
-    completed: true,
-  },
-  {
-    id: '3',
-    title: 'Repas Conscients',
-    subtitle: 'Nourrit votre onde intérieure',
+    id: 'water',
+    title: 'Boire de l’eau',
+    subtitle: 'Avec cette eau je serais en meilleur forme',
     icon: 'meal',
-    completed: true,
+    photo: true,
   },
 ];
+
+const EVERY_DAY: MissionTemplate[] = [
+  { id: 'movement', title: 'Mouvement', subtitle: 'Objectif : 6 000 pas aujourd’hui', icon: 'mobility' },
+  { id: 'hygiene', title: 'Hygiène', subtitle: 'Routine de soin commencée', icon: 'hygiene' },
+  { id: 'meal', title: 'Repas Conscients', subtitle: 'Nourrit votre onde intérieure', icon: 'meal' },
+];
+
+export function missionsForDay(day: number): MissionTemplate[] {
+  return day <= 1 ? FIRST_DAY : EVERY_DAY;
+}
+
+export function findMission(id: string): MissionTemplate | undefined {
+  return [...FIRST_DAY, ...EVERY_DAY].find((m) => m.id === id);
+}

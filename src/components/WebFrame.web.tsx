@@ -25,7 +25,7 @@ export default function WebFrame({ children }: { children: React.ReactNode }) {
 
   return (
     <LinearGradient
-      colors={['#E9F7F4', Colors.background, '#F4EEFB']}
+      colors={['#E9F7F4', '#EEF2F7', '#F4EEFB']}
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 1 }}
       style={styles.backdrop}
@@ -55,10 +55,8 @@ const styles = StyleSheet.create({
   },
   screen: {
     flex: 1,
-    // Stands in for the status bar area a real device would reserve.
-    paddingTop: 12,
     borderRadius: 38,
     overflow: 'hidden',
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.lightWhite,
   },
 });
