@@ -35,8 +35,8 @@ export function HeaderWave({ width = DESIGN_WIDTH }: { width?: number }) {
   // The clipping box keeps the oversized asset from making its parent scrollable
   // (on web, focusing the chat input would otherwise scroll the screen sideways).
   return (
-    <View style={[styles.clip, { height: 180 * ratio }]} pointerEvents="none">
-      <Animated.View style={[styles.wave, { left: -27.9 * ratio, top: -26.3 * ratio }, style]}>
+    <View style={[styles.clip, { height: 160 * ratio }]} pointerEvents="none">
+      <Animated.View style={[styles.wave, { top: -4 * ratio }, style]}>
         <FigmaIcon name="blobHeader" scale={ratio} />
       </Animated.View>
     </View>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     right: 0,
     overflow: 'hidden',
   },
-  // Asset box from the design: blob at x -1.57 / y 0 plus its blur margins
+  // The export starts at the blob's own bounds; the extra top hides the sway
   wave: {
     position: 'absolute',
   },

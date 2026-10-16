@@ -61,14 +61,14 @@
       "file": "header-settings.svg",
       "asset": "67e1e.svg",
       "node": "25:2116",
-      "w": 20.1,
+      "w": 21,
       "h": 20
     },
     {
       "file": "header-settings-page.svg",
       "asset": "50fdb.svg",
       "node": "143:692",
-      "w": 20.1,
+      "w": 21,
       "h": 20
     },
     {
@@ -82,22 +82,22 @@
       "file": "header-profile.svg",
       "asset": "07fa4.svg",
       "node": "25:2116",
-      "w": 16.2,
-      "h": 18
+      "w": 18,
+      "h": 20
     },
     {
       "file": "icon-star.svg",
       "asset": "ec89c.svg",
       "node": "118:1019",
-      "w": 10.2,
-      "h": 10.2
+      "w": 11,
+      "h": 11
     },
     {
       "file": "icon-cloth.svg",
       "asset": "5e158.svg",
       "node": "118:1019",
-      "w": 19.75,
-      "h": 13.75
+      "w": 20,
+      "h": 14
     },
     {
       "file": "icon-graph.svg",
@@ -110,7 +110,7 @@
       "file": "icon-lock.svg",
       "asset": "22ff3.svg",
       "node": "143:692",
-      "w": 17.6,
+      "w": 18,
       "h": 22
     },
     {
@@ -159,8 +159,8 @@
       "file": "icon-check.svg",
       "asset": "a230c.svg",
       "node": "110:641",
-      "w": 12.225,
-      "h": 9.019
+      "w": 13,
+      "h": 10
     },
     {
       "file": "mission-hygiene.svg",
@@ -194,22 +194,22 @@
       "file": "blob-minimoi.svg",
       "asset": "be2df.svg",
       "node": "110:641",
-      "w": 105.6,
-      "h": 101.5
+      "w": 106,
+      "h": 102
     },
     {
       "file": "blob-step.svg",
       "asset": "d3143.svg",
       "node": "134:623",
-      "w": 64.1,
-      "h": 61.6
+      "w": 65,
+      "h": 62
     },
     {
       "file": "blob-launch.svg",
       "asset": "6d728.svg",
       "node": "75:726",
-      "w": 142.2,
-      "h": 136.7
+      "w": 143,
+      "h": 137
     },
     {
       "file": "blob-splash.svg",
@@ -222,15 +222,15 @@
       "file": "blob-header.svg",
       "asset": "abbf8.svg",
       "node": "198:1531",
-      "w": 444.8,
-      "h": 179.9
+      "w": 390,
+      "h": 154
     },
     {
       "file": "steps-line.svg",
       "asset": "42dd4.svg",
       "node": "134:623",
-      "w": 165,
-      "h": 46
+      "w": 46,
+      "h": 165
     },
     {
       "file": "map.png",
@@ -240,32 +240,11 @@
       "h": 365
     },
     {
-      "file": "map-route.svg",
-      "asset": "f9633.svg",
-      "node": "134:720",
-      "w": 114.5,
-      "h": 261
-    },
-    {
-      "file": "map-route-stroke.svg",
-      "asset": "cd7d9.svg",
-      "node": "134:720",
-      "w": 123,
-      "h": 267
-    },
-    {
-      "file": "map-cursor.svg",
-      "asset": "43b07.svg",
-      "node": "134:720",
-      "w": 47,
-      "h": 55
-    },
-    {
       "file": "map-track.svg",
       "asset": "a565e.svg",
       "node": "134:720",
-      "w": 10.7,
-      "h": 423.7
+      "w": 11,
+      "h": 424
     },
     {
       "file": "map-arrow.svg",

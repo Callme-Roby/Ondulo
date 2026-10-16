@@ -1,2 +1,10 @@
-<!-- PLACEHOLDER: replace with Figma asset 218e4.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="123" height="118" viewBox="0 0 123 118"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D5FFB3"/><stop offset=".5" stop-color="#94F6FF"/><stop offset="1" stop-color="#FF9EF2"/></linearGradient></defs><ellipse cx="61.5" cy="59.0" rx="51.66" ry="49.559999999999995" fill="url(#g)"/></svg>
+<svg width="123" height="118" viewBox="0 0 123 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M72.4998 3.07923C85.4754 5.0185 94.7918 15.1263 103.491 25.0506C111.48 34.1635 117.612 44.3165 119.226 56.3833C121.136 70.6623 122.081 86.2585 113.183 97.5137C103.577 109.663 87.879 115.876 72.4998 115.483C57.452 115.097 45.3792 105.238 33.8269 95.4818C20.5947 84.3068 3.17946 73.8017 2.52149 56.3833C1.85505 38.7407 16.8081 24.8041 30.7557 14.1799C42.7018 5.08025 57.7034 0.867817 72.4998 3.07923Z" stroke="url(#paint0_radial_185_1200)" stroke-width="5" stroke-linecap="round"/>
+<defs>
+<radialGradient id="paint0_radial_185_1200" cx="0" cy="0" r="1" gradientTransform="matrix(102.037 -69.966 73.0618 108.91 15.4758 92.5417)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D5FFB3"/>
+<stop offset="0.359206" stop-color="#94F6FF"/>
+<stop offset="1" stop-color="#FF9EF2"/>
+</radialGradient>
+</defs>
+</svg>

@@ -67,12 +67,8 @@ export default function ParcoursScreen() {
           <Text style={[styles.place, { top: TRACK_TOP + TRACK_HEIGHT - 8 }]}>{WALK.start}</Text>
 
           <View style={styles.map}>
+            {/* The design's map with the route and position cursor */}
             <FigmaIcon name="map" style={StyleSheet.absoluteFill} />
-            <FigmaIcon name="mapRoute" style={{ position: 'absolute', left: 119, top: 72.5 }} />
-            <FigmaIcon name="mapRouteStroke" style={{ position: 'absolute', left: 115.5, top: 70 }} />
-            <View style={styles.cursor}>
-              <FigmaIcon name="mapCursor" style={{ transform: [{ rotate: '44deg' }] }} />
-            </View>
           </View>
         </View>
       </View>
@@ -122,14 +118,5 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(19, 90, 157, 0.25)',
     backgroundColor: Colors.white,
     overflow: 'hidden',
-  },
-  cursor: {
-    position: 'absolute',
-    left: 123,
-    top: 162,
-    width: 71.6,
-    height: 72.3,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

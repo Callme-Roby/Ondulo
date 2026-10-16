@@ -103,7 +103,7 @@ export default function RecetteScreen() {
             {step < RECIPE.steps.length - 1 && (
               <View style={styles.upcoming}>
                 <View style={styles.line} pointerEvents="none">
-                  <FigmaIcon name="stepsLine" style={styles.lineAsset} />
+                  <FigmaIcon name="stepsLine" />
                 </View>
                 <View style={styles.upcomingList}>
                   {RECIPE.steps.slice(step + 1).map((text) => (
@@ -217,9 +217,6 @@ const styles = StyleSheet.create({
     height: 164,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  lineAsset: {
-    transform: [{ rotate: '90deg' }],
   },
   upcomingList: {
     gap: 16,
