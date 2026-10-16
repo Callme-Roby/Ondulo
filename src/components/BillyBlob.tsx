@@ -12,6 +12,7 @@ import Animated, {
 import Svg, { Defs, G, Path, RadialGradient, Stop } from 'react-native-svg';
 import * as Blobs from '../assets/blobs';
 import { BlobGradient, blobPath, wobbleFor } from './blobShape';
+import { Colors } from '../constants/theme';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 
@@ -79,6 +80,18 @@ export default function BillyBlob({
     d: blobPath(start, segments, wobble, clock.value, amplitude),
   }));
 
+  // Optional second outline over the body, rippling on its own
+  const overlay = shape.overlays?.[0];
+  const overlayStart = overlay?.start ?? start;
+  const overlaySegments = overlay?.segments ?? segments;
+  const overlayWobble = useMemo(
+    () => (overlay ? wobbleFor({ ...shape, start: overlay.start, segments: overlay.segments }) : wobble),
+    [shape, overlay, wobble]
+  );
+  const overlayOutline = useAnimatedProps(() => ({
+    d: blobPath(overlayStart, overlaySegments, overlayWobble, clock.value, amplitude),
+  }));
+
   // Soft squash and stretch: a jelly breath rather than a rigid zoom
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [
@@ -90,6 +103,7 @@ export default function BillyBlob({
 
   const size = scale * (0.82 + 0.18 * energy);
   const top = shape.layers[shape.layers.length - 1];
+  const paint = shape.stroke ?? top;
   const initial = blobPath(start, segments, wobble, 0, amplitude);
 
   return (
@@ -102,7 +116,8 @@ export default function BillyBlob({
         viewBox={`0 0 ${shape.width} ${shape.height}`}
       >
         <Defs>
-          <Gradient id={gradientId} gradient={shape.stroke ?? top} />
+          {paint && <Gradient id={gradientId} gradient={paint} />}
+          {overlay && <Gradient id={`${gradientId}-o`} gradient={overlay} />}
         </Defs>
         {shape.stroke ? (
           <AnimatedPath
@@ -114,11 +129,48 @@ export default function BillyBlob({
             strokeLinecap="round"
           />
         ) : (
-          <AnimatedPath d={initial} animatedProps={outline} fill={`url(#${gradientId})`} />
+          <>
+            {shape.fill && shape.fill.opacity < 1 && (
+              // Figma keeps the glow from showing behind Billy: an opaque "Light White"
+              // base does the same, and the translucent layers blend on it as designed
+              <AnimatedPath d={initial} animatedProps={outline} fill={Colors.lightWhite} />
+            )}
+            {shape.fill?.shadow && (
+              // Seen through the translucent body; drawn flat (SVG filters are not portable)
+              <AnimatedPath
+                d={initial}
+                animatedProps={outline}
+                fill={`rgb(${shape.fill.shadow.rgba.slice(0, 3).join(', ')})`}
+                fillOpacity={shape.fill.shadow.rgba[3]}
+              />
+            )}
+            <AnimatedPath
+              d={initial}
+              animatedProps={outline}
+              fill={shape.fill ? shape.fill.color : `url(#${gradientId})`}
+              fillOpacity={shape.fill?.opacity}
+            />
+          </>
+        )}
+        {overlay && (
+          <AnimatedPath
+            d={blobPath(overlay.start, overlay.segments, overlayWobble, 0, amplitude)}
+            animatedProps={overlayOutline}
+            fill={`url(#${gradientId}-o)`}
+            opacity={overlay.opacity}
+          />
         )}
         <G>
           {shape.face.map((part) => (
-            <Path key={part.d.slice(0, 24)} d={part.d} fill={part.fill} />
+            <Path
+              key={part.d.slice(0, 24)}
+              d={part.d}
+              fill={part.fill}
+              stroke={part.stroke}
+              strokeWidth={part.strokeWidth}
+              strokeLinecap={part.stroke ? 'round' : undefined}
+              strokeLinejoin={part.stroke ? 'round' : undefined}
+            />
           ))}
         </G>
       </Svg>

@@ -20,8 +20,13 @@ export default function HomeScreen() {
   const ratio = missions.length > 0 ? done / missions.length : 0;
   const nextMission = missions.find((m) => !m.completed);
 
+  // Day 1 follows the Figma "Premier pas" frames: a grey, thirsty Billy, then
+  // the colourful "Blob heureux" once he has had his water.
+  const firstDay = day <= 1;
+  const blob = firstDay ? (done > 0 ? 'blobHydrated' : 'blobThirsty') : 'blobHome';
+
   let mood: string;
-  if (day <= 1) mood = done > 0 ? 'est hydraté' : 'a soif';
+  if (firstDay) mood = done > 0 ? 'est hydraté' : 'a soif';
   else if (ratio >= 0.6) mood = 'se sent frais';
   else if (ratio >= 0.3) mood = 'se réveille';
   else mood = 'a besoin de toi';
@@ -38,7 +43,11 @@ export default function HomeScreen() {
 
         <View style={styles.hero}>
           <View style={styles.ring} />
-          <BillyBlob asset="blobHome" energy={ratio} period={ratio > 0.5 ? 3.2 : 4.4} />
+          <BillyBlob
+            asset={blob}
+            energy={firstDay ? 1 : ratio}
+            period={firstDay ? (done > 0 ? 3.2 : 4.4) : ratio > 0.5 ? 3.2 : 4.4}
+          />
           <View style={styles.status}>
             <Text style={styles.statusText}>
               {petName} {mood}

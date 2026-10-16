@@ -6,7 +6,7 @@ Au premier lancement, on touche le blob pour le réveiller, puis il fait connais
 
 Les écrans suivent la maquette Figma *Product Design – Ondulo App* :
 
-- **Accueil** : jour, XP avant la prochaine évolution, Billy et les missions du jour
+- **Accueil** : jour, XP avant la prochaine évolution, Billy et les missions du jour (au jour 1, comme sur les écrans « Premier pas » : Billy gris tant qu'il a soif, puis le « Blob heureux » une fois hydraté)
 - **Mini Moi** : Billy, les étoiles gagnées et l'historique des missions
 - **Boutique** : accessoires achetés avec les étoiles
 - **Défis** : une recette pas à pas (ingrédients puis étapes) et un parcours de marche

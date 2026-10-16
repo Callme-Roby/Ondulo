@@ -1,5 +1,5 @@
 {
-  "_comment": "Figma assets used by the app. file: local name in assets/figma; asset: file name served by the Figma MCP for node `node` of file N9nzvHy7QCSd82LGHlfHMY; w/h: rendered size in the design.",
+  "_comment": "Figma assets used by the app. file: local name in assets/figma; asset: file name served by the Figma MCP for node `node` of file N9nzvHy7QCSd82LGHlfHMY (null: the file is a direct SVG export of `node`); w/h: rendered size in the design.",
   "assets": [
     {
       "file": "nav-home.svg",
@@ -189,6 +189,20 @@
       "node": "25:2116",
       "w": 316,
       "h": 304
+    },
+    {
+      "file": "blob-thirsty.svg",
+      "asset": null,
+      "node": "205:5745",
+      "w": 256,
+      "h": 256
+    },
+    {
+      "file": "blob-hydrated.svg",
+      "asset": null,
+      "node": "205:5980",
+      "w": 316,
+      "h": 316
     },
     {
       "file": "blob-minimoi.svg",

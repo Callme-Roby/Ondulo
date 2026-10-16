@@ -15,8 +15,15 @@ export interface BlobShape {
   layers: BlobGradient[];
   /** Outline-only Billy (splash screen). */
   stroke: (BlobGradient & { width: number }) | null;
-  /** Eyes and smile. */
-  face: { d: string; fill: string }[];
+  /**
+   * Plain-coloured body instead of a gradient (the translucent, thirsty Billy).
+   * `shadow` is the body's own shadow, which shows through the translucent fill.
+   */
+  fill?: { color: string; opacity: number; shadow?: { blur: number; rgba: number[] } };
+  /** Extra outlines drawn over the body (the second ripple of "Blob heureux"). */
+  overlays?: (BlobGradient & { start: number[]; segments: number[][]; opacity: number })[];
+  /** Eyes and smile (closed eyes are strokes). */
+  face: { d: string; fill: string; stroke?: string; strokeWidth?: number }[];
   shadow: { blur: number; rgba: number[] } | null;
 }
 
