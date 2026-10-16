@@ -9,24 +9,29 @@ import MiniMoiScreen from './src/screens/MiniMoiScreen';
 import BoutiqueScreen from './src/screens/BoutiqueScreen';
 import AmisScreen from './src/screens/AmisScreen';
 import TabBar from './src/components/TabBar';
+import WebFrame from './src/components/WebFrame';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <StatusBar style="dark" />
-        <Tab.Navigator
-          tabBar={(props) => <TabBar {...props} />}
-          screenOptions={{ headerShown: false }}
+      <WebFrame>
+        <NavigationContainer
+          documentTitle={{ formatter: (_options, route) => `${route?.name ?? 'Accueil'} · Ondulo` }}
         >
-          <Tab.Screen name="Accueil" component={HomeScreen} />
-          <Tab.Screen name="Mini Moi" component={MiniMoiScreen} />
-          <Tab.Screen name="Boutique" component={BoutiqueScreen} />
-          <Tab.Screen name="Amis" component={AmisScreen} />
-        </Tab.Navigator>
-      </NavigationContainer>
+          <StatusBar style="dark" />
+          <Tab.Navigator
+            tabBar={(props) => <TabBar {...props} />}
+            screenOptions={{ headerShown: false }}
+          >
+            <Tab.Screen name="Accueil" component={HomeScreen} />
+            <Tab.Screen name="Mini Moi" component={MiniMoiScreen} />
+            <Tab.Screen name="Boutique" component={BoutiqueScreen} />
+            <Tab.Screen name="Amis" component={AmisScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </WebFrame>
     </SafeAreaProvider>
   );
 }
