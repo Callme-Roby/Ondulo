@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,7 @@ import { Colors, Fonts } from '../constants/theme';
 import { DAILY_MISSIONS, Mission } from '../constants/missions';
 import Blob from '../components/Blob';
 import MissionCard from '../components/MissionCard';
+import { loadCompletion, saveCompletion } from '../storage/missionStore';
 
 function SettingsIcon() {
   return (
@@ -49,6 +50,16 @@ function ProfileAvatar() {
 export default function HomeScreen() {
   const [missions, setMissions] = useState<Mission[]>(DAILY_MISSIONS);
 
+  // Restore mission progress saved on this device
+  useEffect(() => {
+    loadCompletion().then((saved) => {
+      if (!saved) return;
+      setMissions((prev) =>
+        prev.map((m) => (m.id in saved ? { ...m, completed: saved[m.id] } : m))
+      );
+    });
+  }, []);
+
   const completedCount = useMemo(
     () => missions.filter((m) => m.completed).length,
     [missions]
@@ -64,9 +75,9 @@ export default function HomeScreen() {
   const day = 5;
 
   const toggleMission = (id: string) => {
-    setMissions((prev) =>
-      prev.map((m) => (m.id === id ? { ...m, completed: !m.completed } : m))
-    );
+    const next = missions.map((m) => (m.id === id ? { ...m, completed: !m.completed } : m));
+    setMissions(next);
+    saveCompletion(Object.fromEntries(next.map((m) => [m.id, m.completed])));
   };
 
   const blobMood = completionRatio >= 0.6
