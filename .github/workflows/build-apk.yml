@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - claude/ondulo-app-setup-9aiNm
+      - main
 
 jobs:
   build:
